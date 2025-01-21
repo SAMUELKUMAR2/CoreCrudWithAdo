@@ -1,0 +1,15 @@
+﻿@model IEnumerable<SamuelCoreAdo.Models.tblEmployee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<button class="btn btn-outline-primary">
+    @Html.ActionLink("Show", "ShowEmployee", null, new { @class = "btn btn-primary" })
+</button>
+@Html.ActionLink("New Employee", "AddEmployee")

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SamuelCoreAdo.Models.tblEmployee>
+@{
+    ViewData["Title"] = "ShowEmployee";
+}
+
+<h1>ShowEmployee</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.EmpId)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+
+
+            <th>@Html.DisplayNameFor(m => m.Age)</th>
+
+
+            <th>@Html.DisplayNameFor(m => m.Gender)</th>
+
+            <th>@Html.DisplayNameFor(m => m.Country)</th>
+
+            <th>@Html.DisplayNameFor(m => m.State)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+  <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                        @Html.DisplayFor(modelItem => item.EmpId)
+                </td>
+           
+                <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(Model=>item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model=>item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model=>item.Country)
+
+                </td>
+                <td>
+                        @Html.DisplayFor(Model => item.State)
+                </td>
+
+                <td>
+                   <button class="btn btn-outline-primary">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.EmpId })
+                   </button>
+                       <button class="btn btn-outline-danger">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+                       </button>
+                </td>
+            </tr>
+} 
+    </tbody>
+
+</table>
+
+
+
+     
